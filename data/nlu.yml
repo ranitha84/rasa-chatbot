@@ -1,0 +1,315 @@
+version: "2.0"
+nlu:
+- intent: affirm
+  examples: |
+    - yes
+    - yep
+    - yeah
+    - indeed
+    - that's right
+    - ok
+    - great
+    - right, thank you
+    - correct
+    - great choice
+    - sounds really good
+    - thanks
+    - can you please share the details on this id: [abcd_email@gmail.com](email)
+    - mail to [abcd_email@gmail.com](email)
+    - [abcd_email@gmail.com](email)
+    - yes. email these details to [abcd_email@hhhhhh.com](email)
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - good bye
+    - stop
+    - end
+    - farewell
+    - Bye bye
+    - have a good one
+- intent: deny
+  examples: |
+    - no
+    - no thanks
+    - not interested
+    - nope
+    - no, not interested
+    - thanks. but not required
+    - i don't require it over mail. thanks
+    - noo
+- intent: greet
+  examples: |
+    - hey
+    - howdy
+    - hey there
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - dear sir
+    - hi there
+- intent: restaurant_search
+  examples: |
+    - i'm looking for a place to eat
+    - I want to grab lunch
+    - I am searching for a dinner spot
+    - I am looking for some restaurants in [Delhi](location).
+    - I am looking for some restaurants in [Bangalore](location)
+    - show me [chinese](location) restaurants
+    - show me [chines](cuisine) restaurants in the [New Delhi](location)
+    - show me a [mexican](cuisine) place in the [centre](location)
+    - i am looking for an [indian](cuisine) spot called olaolaolaolaolaola
+    - search for restaurants
+    - anywhere in the [west](location)
+    - I am looking for [asian fusion](cuisine) food
+    - I am looking a restaurant in [294328](location)
+    - in [Gurgaon](location)
+    - [South Indian](cuisine)
+    - [North Indian](cuisine)
+    - [Italian](cuisine)
+    - [Chinese](cuisine)
+    - [chinese](cuisine)
+    - [mexican](cuisine)
+    - [american](cuisine)
+    - [mexican] food{"entity": "cuisine"}
+    - in [calculata](location)
+    - [Lithuania](location)
+    - Oh, sorry, in [Italy](location)
+    - in [delhi](location)
+    - in [calcutta](location)
+    - in [chennai](location)
+    - I am looking for some restaurants in [Mumbai](location)
+    - I am looking for [mexican](cuisine) indian fusion
+    - can you book a table in [rome](location) in a [moderate](price) price range with [british](cuisine) food for [four]{"entity": "people", "value": "4"} people
+    - [central](location) [indian](cuisine) restaurant
+    - please help me to find restaurants in [pune](location)
+    - Please find me a restaurantin [bangalore](location)
+    - [mumbai](location)
+    - show me restaurants
+    - please find me [chinese](cuisine) restaurant in [delhi](location)
+    - can you find me a [chinese](cuisine) restaurant
+    - [delhi](location)
+    - please find me a restaurant in [ahmedabad](location)
+    - please show me a few [italian](cuisine) restaurants in [bangalore](location)
+    - suggest me some good restaurants where [biriyani] {"entity":"cuisine"} is available
+    - looking out for [tandoori] {"entity":"cuisine"}  chicken
+    - looking out for a restaurant for two {"entity":"people",value:"2"} people
+    - looking out for a restaurant for 2 {"entity":"people"} people
+    - restaurants with budget [between 300 to 700](price) for [two](people) people
+    - restaurants with budget [>300 and <700]{"entity": "price", "value": "between 300 to 700"} for [two](people) people
+    - restaurants with budget [between 300 to 700](price)
+    - restaurants with budget less than 300{"entity":"price", "value":"lesser than 300"}
+    - restaurants with budget [lesser than 300](price)
+    - restaurants with budget [greater than 700](price)
+    - restaurants with budget [>700]{"entity": "price", "value": "greater than 700"}
+    - find me a restaurant
+    - [ooty](location)
+    - find a restaurant
+    - [djfshdjfh](location)
+    - find me a restaurant in [Guruvayoor](location)
+    - i'm looking for a place in the [north](location) of town
+    - [Chinese]{"entity": "cuisine", "value": "chinese"}
+    - [between 300 to 700](price)
+    - show me [chinese](cuisine) restaurants in the [north](location)
+    - anywhere in [chennai](location)
+    - [greater than 700](price)
+    - find me a restaurant in [Chennai](location)
+    - anywhere in [Imphal](location)
+    - somewhere in [Tiruchur](location)
+    - some random place in [Patur](location)
+    - some random place at [Mhowgaon](location)
+    - [Tanjur](location)
+    - in [Kanyakumari](location)
+    - find me a restaurant in [kerala](location)
+- synonym: '4'
+  examples: |
+    - four
+- synonym: between 300 and 700
+  examples: |
+    - >300 and <700
+    - bw 300 and 700
+    - 300 - 700
+    - 300 to 700
+    - greater than 300 and lesser than 700
+    - btw 300 and 700
+    - mid
+    - moderate
+- synonym: greater than 700
+  examples: |
+    - >700
+    - > 700
+    - gt 700
+    - gt than 700
+    - higher price
+- synonym: chinese
+  examples: |
+    - Chinese
+    - chines
+    - Chines
+- synonym: Delhi
+  examples: |
+    - New Delhi
+    - dilli
+    - naya dilli
+    - naya delhi
+- synonym: mumbai
+  examples: |
+    - Bombay
+    - Bumbai
+- synonym: kolkatta
+  examples: |
+    - Calcutta
+- synonym: Chennai
+  examples: |
+    - Madras
+- synonym: bangalore
+  examples: |
+    - Bengaluru
+- synonym: vegetarian
+  examples: |
+    - veggie
+    - vegg
+- synonym: lesser than 300
+  examples: |
+    - < 300
+    - less than 300
+    - less 300
+    - lower 300
+    - lower than 300
+    - 300 or less
+    - lesser budget
+    - low
+- regex: email
+  examples: |
+    - <mailto:[a-zA-Z0-9_.+]+@[a-zA-Z]+[.][a-zA-Z0-9-.]+>$
+    - [a-zA-Z0-9_.+]+@[a-zA-Z]+[.][a-zA-Z0-9-.]+$
+- regex: greet
+  examples: |
+    - hey[^\s]*
+- regex: pincode
+  examples: |
+    - [0-9]{6}
+- regex: price
+  examples: |
+    - ((^)(low|moderate|high))[^\s]*
+- lookup: location
+  examples: |
+    - Ahmedabad
+    - Bangalore
+    - Chennai
+    - Delhi
+    - Hyderabad
+    - Kolkata
+    - Mumbai
+    - Pune
+    - Agra
+    - Ajmer
+    - Aligarh
+    - Allahabad
+    - Amravati
+    - Amritsar
+    - Asansol
+    - Aurangabad
+    - Bareilly
+    - Belgaum
+    - Bhavnagar
+    - Bhiwandi
+    - Bhopal
+    - Bhubaneswar
+    - Bikaner
+    - Bokaro Steel City
+    - Chandigarh
+    - Coimbatore
+    - Cuttack
+    - Dehradun
+    - Dhanbad
+    - Durg-Bhilai Nagar
+    - Durgapur
+    - Erode
+    - Faridabad
+    - Firozabad
+    - Ghaziabad
+    - Gorakhpur
+    - Gulbarga
+    - Guntur
+    - Gurgaon
+    - Guwahati
+    - Gwalior
+    - Hubli
+    - Dharwad
+    - Indore
+    - Jabalpur
+    - Jaipur
+    - Jalandhar
+    - Jammu
+    - Jamnagar
+    - Jamshedpur
+    - Jhansi
+    - Jodhpur
+    - Kannur
+    - Kanpur
+    - Kakinada
+    - Kochi
+    - Kottayam
+    - Kolhapur
+    - Kollam
+    - Kota
+    - Kozhikode
+    - Kurnool
+    - Lucknow
+    - Ludhiana
+    - Madurai
+    - Malappuram
+    - Mathura
+    - Goa
+    - Mangalore
+    - Meerut
+    - Moradabad
+    - Mysore
+    - Nagpur
+    - Nanded
+    - Nashik
+    - Nellore
+    - Noida
+    - Palakkad
+    - Patna
+    - Pondicherry
+    - Raipur
+    - Rajkot
+    - Rajahmundry
+    - Ranchi
+    - Rourkela
+    - Salem
+    - Sangli
+    - Siliguri
+    - Solapur
+    - Srinagar
+    - Sultanpur
+    - Surat
+    - Thiruvananthapuram
+    - Thrissur
+    - Tiruchirappalli
+    - Tirunelveli
+    - Tiruppur
+    - Ujjain
+    - Vijayapura
+    - Vadodara
+    - Varanasi
+    - Vasai-Virar City
+    - Vijayawada
+    - Visakhapatnam
+    - Warangal
+    - Ooty
+    - Haridwar
+    - Rishikesh
+    - Manali
+    - Haridwar
+    - Tiruvannamalai
+    - Dindigul
+    - Hajipur
+    - Kanchipuram
+    - Kollam
+    - Roorkee
+    - Kannur
+    - Etawah

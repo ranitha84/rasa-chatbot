@@ -1,0 +1,131 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- restaurant_search
+- greet
+- deny
+- stop
+- goodbye
+- affirm
+- bot_challenge
+- thankyou
+entities:
+- cuisine
+- email
+- location
+- people
+- price
+slots:
+  cuisine:
+    type: categorical
+    influence_conversation: true
+    values:
+    - chinese
+    - italian
+    - north indian
+    - south indian
+    - american
+    - mexican
+  location:
+    type: text
+    influence_conversation: true
+  email:
+    type: text
+    influence_conversation: true
+  location_found:
+    type: categorical
+    influence_conversation: true
+    values:
+    - notfound
+    - tier3
+    - found
+  restaurant_found:
+    type: categorical
+    influence_conversation: true
+    values:
+    - notfound
+    - found
+  price:
+    type: categorical
+    influence_conversation: true
+    values:
+    - lesser than 300
+    - between 300 and 700
+    - greater than 700
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_goodbye:
+  - text: Bye
+  - text: goodbye :(
+  - text: Bye-bye
+  - text: Bon Appetit!!
+  utter_final_goodbye:
+  - text: Bye Bye. Bon Appetit!!
+  utter_default:
+  - text: i cannot understand
+  utter_ask_location:
+  - text: In what location?
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_cuisine:
+  - text: What kind of cuisine would you like?
+    buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Italian
+      title: Italian
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    - payload: Cafe
+      title: Cafe
+    - payload: Biryani
+      title: Biryani
+  utter_ask_price:
+  - text: What is the average budget you are looking for?
+    buttons:
+    - payload: lesser than 300
+      title: lesser than 300
+    - payload: between 300 to 700
+      title: between 300 to 700
+    - payload: greater than 700
+      title: greater than 700
+  utter_location_notfound:
+  - text: Sorry location not found :( . Please specify the location again
+  utter_result_found:
+  - text: Would you like to receive the top 10 results via email?
+  utter_result_notfound:
+  - text: We could not fetch results for your search criteria :(. Please refine your search and search again
+  utter_ask_email:
+  - text: Please specify the email address to which I can sent the restaurant details
+  utter_not_serviced:
+  - text: Sorry we don't serve the specified location. Please specify a different location
+actions:
+- action_check_location
+- action_email_details
+- action_reset_slots
+- action_search_restaurants
+- utter_ask_cuisine
+- utter_ask_email
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_price
+- utter_default
+- utter_final_goodbye
+- utter_goodbye
+- utter_greet
+- utter_location_notfound
+- utter_not_serviced
+- utter_result_found
+- utter_result_notfound

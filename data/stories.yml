@@ -1,0 +1,1576 @@
+version: "2.0"
+
+stories:
+- story: Story 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: action_check_location
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: action_check_location
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - action: utter_result_found
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: Story 3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mbusmkwoid
+  - slot_was_set:
+    - location: mbusmkwoid
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+  - intent: restaurant_search
+    entities:
+    - location: bangalore
+  - slot_was_set:
+    - location: bangalore
+  - action: action_check_location
+  - slot_was_set:
+    - location: bangalore
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mbumkdjjo
+  - slot_was_set:
+    - location: mbumkdjjo
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: action_check_location
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: south indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: rishikesh
+  - slot_was_set:
+    - location: rishikesh
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - intent: restaurant_search
+    entities:
+    - location: hyderabad
+  - slot_was_set:
+    - location: hyderabad
+  - action: action_check_location
+  - slot_was_set:
+    - location: hyderabad
+  - slot_was_set:
+     - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: south indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: Story 7
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: surat
+  - slot_was_set:
+    - location: surat
+  - action: action_check_location
+  - slot_was_set:
+    - location: surat
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 8
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: ooty
+  - slot_was_set:
+    - location: ooty
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - intent: restaurant_search
+    entities:
+    - location: bangalore
+  - slot_was_set:
+    - location: bangalore
+  - action: action_check_location
+  - slot_was_set:
+    - location: bangalore
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: Story 9
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: action_check_location
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 10
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: pune
+  - slot_was_set:
+    - location: pune
+  - action: action_check_location
+  - slot_was_set:
+    - location: pune
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 11
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: manali
+  - slot_was_set:
+    - location: manali
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - intent: restaurant_search
+    entities:
+    - location: jammu
+  - slot_was_set:
+    - location: jammu
+  - action: action_check_location
+  - slot_was_set:
+    - location: jammu
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: Story 12
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: pune
+  - slot_was_set:
+    - location: pune
+  - action: action_check_location
+  - slot_was_set:
+    - location: pune
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: south indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 13
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: mbunvkdi
+  - slot_was_set:
+    - location: mbunvkdi
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+  - intent: restaurant_search
+    entities:
+    - location: mysore
+  - slot_was_set:
+    - location: mysore
+  - action: action_check_location
+  - slot_was_set:
+    - location: mysore
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: south indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 14
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: graaar
+  - slot_was_set:
+    - location: graaar
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+
+- story: Story 15
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: jaipur
+  - slot_was_set:
+    - location: jaipur
+  - action: action_check_location
+  - slot_was_set:
+    - location: jaipur
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: south indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 16
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: delhi
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: delhi
+  - action: action_check_location
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 17
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+    - location: goa
+  - slot_was_set:
+    - cuisine: italian
+  - slot_was_set:
+    - location: goa
+  - action: action_check_location
+  - slot_was_set:
+    - location: goa
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: Story 18
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+    - location: ptnsneha
+  - slot_was_set:
+    - cuisine: italian
+  - slot_was_set:
+    - location: ptnsneha
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+  - intent: restaurant_search
+    entities:
+    - location: patna
+  - slot_was_set:
+    - location: patna
+  - action: action_check_location
+  - slot_was_set:
+    - location: patna
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: Story 19
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: haridwar
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: haridwar
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - intent: restaurant_search
+    entities:
+    - location: allahabad
+  - slot_was_set:
+    - location: allahabad
+  - action: action_check_location
+  - slot_was_set:
+    - location: allahabad
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: Story 20
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: kolkata
+  - slot_was_set:
+    - location: kolkata
+  - action: action_check_location
+  - slot_was_set:
+    - location: kolkata
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+- story: Story 21
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: south indian
+    - location: ooty
+  - slot_was_set:
+    - cuisine: south indian
+  - slot_was_set:
+    - location: ooty
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - intent: restaurant_search
+    entities:
+    - location: bengaluru
+  - slot_was_set:
+    - location: bengaluru
+  - action: action_check_location
+  - slot_was_set:
+    - location: bengaluru
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+- story: Story 23
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: american
+    - location: rohtak
+  - slot_was_set:
+    - cuisine: american
+  - slot_was_set:
+    - location: rohtak
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+  - intent: restaurant_search
+    entities:
+    - location: chandigarh
+  - slot_was_set:
+    - location: chandigarh
+  - action: action_check_location
+  - slot_was_set:
+    - location: chandigarh
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+- story: Story 24
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: hwusirinc
+  - slot_was_set:
+    - location: hwusirinc
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+  - intent: restaurant_search
+    entities:
+    - location: jammu
+  - slot_was_set:
+    - location: jammu
+  - action: action_check_location
+  - slot_was_set:
+    - location: jammu
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: south indian
+  - slot_was_set:
+    - cuisine: south indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+- story: Story 25
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: gwalior
+  - slot_was_set:
+    - location: gwalior
+  - action: action_check_location
+  - slot_was_set:
+    - location: gwalior
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: american
+  - slot_was_set:
+    - cuisine: american
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+- story: Story 26
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: filmkidiejf
+  - slot_was_set:
+    - location: filmkidiejf
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+  - intent: restaurant_search
+    entities:
+    - location: faridabad
+  - slot_was_set:
+    - location: faridabad
+  - action: action_check_location
+  - slot_was_set:
+    - location: faridabad
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: mexican
+  - slot_was_set:
+    - cuisine: mexican
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+- story: Story 27
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: delhi
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: delhi
+  - action: action_check_location
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+- story: Story 28
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: action_check_location
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: american
+  - slot_was_set:
+    - cuisine: american
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: Generated Story 1452116777819784640
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: ahmedabad
+  - slot_was_set:
+    - location: ahmedabad
+  - action: action_check_location
+  - slot_was_set:
+    - location: ahmedabad
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: american
+  - slot_was_set:
+    - cuisine: american
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+- story: Generated Story -1188042660663965693
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: bangalore
+  - slot_was_set:
+    - location: bangalore
+  - action: action_check_location
+  - slot_was_set:
+    - location: bangalore
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+- story: Generated Story 8317358195246434525
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: mexican
+  - slot_was_set:
+    - cuisine: mexican
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: action_check_location
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+- story: Generated Story 9105419835541155001
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+  - slot_was_set:
+    - cuisine: italian
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: bangalore
+  - slot_was_set:
+    - location: bangalore
+  - action: action_check_location
+  - slot_was_set:
+    - location: bangalore
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+- story: Generated Story 214356865658395342
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: kolkata
+  - slot_was_set:
+    - location: kolkata
+  - action: action_check_location
+  - slot_was_set:
+    - location: kolkata
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: Generated Story -6634767084668550773
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: north indian
+    - location: delhi
+  - slot_was_set:
+    - cuisine: north indian
+  - slot_was_set:
+    - location: delhi
+  - action: action_check_location
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+- story: Generated Story -6634767084668550773
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: north indian
+    - location: delhi
+  - slot_was_set:
+    - cuisine: north indian
+  - slot_was_set:
+    - location: delhi
+  - action: action_check_location
+  - slot_was_set:
+    - location: delhi
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+- story: Generated Story 877072109721225871
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: chandigarh
+  - slot_was_set:
+    - location: chandigarh
+  - action: action_check_location
+  - slot_was_set:
+    - location: chandigarh
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: north indian
+  - slot_was_set:
+    - cuisine: north indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+- story: Generated Story 877072109721225871
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: jaipur
+  - slot_was_set:
+    - location: jaipur
+  - action: action_check_location
+  - slot_was_set:
+    - location: jaipur
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: north indian
+  - slot_was_set:
+    - cuisine: north indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: between 300 to 700
+  - slot_was_set:
+    - price: between 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+- story: Generated Story -496076962403225172
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: italian
+    - location: ptsnkela
+  - slot_was_set:
+    - cuisine: italian
+  - slot_was_set:
+    - location: ptsnkela
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+  - intent: restaurant_search
+    entities:
+    - location: pune
+  - slot_was_set:
+    - location: pune
+  - action: action_check_location
+  - slot_was_set:
+    - location: pune
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+      - restaurant_found: found
+  - action: utter_result_found
+  - intent: affirm
+  - action: utter_ask_email
+  - intent: affirm
+    entities:
+    - email: ranitha84@gmail.com
+  - slot_was_set:
+    - email: ranitha84@gmail.com
+  - action: action_email_details
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: djfshdjfh
+  - slot_was_set:
+    - location: djfshdjfh
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: notfound
+  - action: utter_location_notfound
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: Guruvayoor
+  - slot_was_set:
+    - location: Guruvayoor
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: null
+  - slot_was_set:
+    - price: null
+  - slot_was_set:
+    - email: null
+  - slot_was_set:
+    - cuisine: null
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: Chennai
+    - location: Chennai
+  - slot_was_set:
+    - location: Chennai
+  - action: action_check_location
+  - slot_was_set:
+    - location: Chennai
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: greater than 700
+  - slot_was_set:
+    - price: greater than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Chennai
+  - slot_was_set:
+    - cuisine: Italian
+  - slot_was_set:
+    - price: greater than 700
+  - slot_was_set:
+    - restaurant_found: found
+  - action: utter_result_found
+  - intent: deny
+  - action: utter_final_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: Jammu
+  - slot_was_set:
+    - location: Jammu
+  - action: action_check_location
+  - slot_was_set:
+    - location: Jammu
+  - slot_was_set:
+    - location_found: found
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: greater than 700
+  - slot_was_set:
+    - price: greater than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Jammu
+  - slot_was_set:
+    - cuisine: Italian
+  - slot_was_set:
+    - price: greater than 700
+  - slot_was_set:
+    - restaurant_found: notfound
+  - action: utter_result_notfound
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Tanjur
+  - slot_was_set:
+    - location: Tanjur
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: null
+  - slot_was_set:
+    - price: null
+  - slot_was_set:
+    - email: null
+  - slot_was_set:
+    - cuisine: null
+  - intent: restaurant_search
+    entities:
+    - location: Kanyakumari
+  - slot_was_set:
+    - location: Kanyakumari
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: null
+  - slot_was_set:
+    - price: null
+  - slot_was_set:
+    - email: null
+  - slot_was_set:
+    - cuisine: null
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: kerala
+  - slot_was_set:
+    - location: kerala
+  - action: action_check_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: tier3
+  - action: utter_not_serviced
+  - action: action_reset_slots
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_found: null
+  - slot_was_set:
+    - price: null
+  - slot_was_set:
+    - email: null
+  - slot_was_set:
+    - cuisine: null
