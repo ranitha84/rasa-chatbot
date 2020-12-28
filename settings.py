@@ -10,8 +10,6 @@ MAIL_USE_SSL = True
 MAIL_USE_TLS = False
 #MAIL_USERNAME = "foodeebotraka@gmail.com"
 #MAIL_PASSWORD = "QAZX@100"
-MAIL_USERNAME = 'ranitha84@gmail.com'
-MAIL_PASSWORD = 'xlyqhrvxpdyhrqxx'
 
 #
 FLASK_SERVER_NAME = 'localhost:8888'
